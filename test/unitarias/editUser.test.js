@@ -1,7 +1,7 @@
 import { describe, it, vi, expect } from 'vitest';
 import edit from '../../users/helpers/edit';
 
-describe('editUser', () => {
+describe('editUser', async () => {
   it('debería llamar a la función edit con los parámetros correctos', async () => {
     const userId = 10;
     const userData = {
