@@ -1,6 +1,6 @@
 import supabase from "../supabase/config.js";
 
-const { data } = await supabase.from('products').select().order("id",{ascending:true})
+const { data } = await supabase.from('products').select()
 
 const inputImage = document.querySelector('#product-modal-edit-image_url')
 const inputName = document.querySelector('#product-modal-edit-name')
