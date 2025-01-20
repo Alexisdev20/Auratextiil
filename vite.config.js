@@ -18,7 +18,6 @@ export default defineConfig({
         us: 'us/index.html',
         users:'users/index.html',
         productsManage:'productsManage/index.html',
-        // Agrega más páginas según la estructura
       }
     }
   }
