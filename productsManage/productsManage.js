@@ -1,89 +1,120 @@
-import supabase from "../supabase/config";
-import { deleteUser } from "./helpers/deleteUser";
-import { editUser } from "./helpers/editUser";
+import supabase from "../supabase/config.js";
 
-async function fetchDataAndInitialize() {
-    // Verifica si el usuario está en el localStorage
-    if (localStorage.getItem("user")) {
-        const user = JSON.parse(localStorage.getItem("user"));
-        if (user.admin === false) {
-            window.location.replace("/");
-            return; // Termina la ejecución si no es admin
+async function init() {
+    const { data } = await supabase.from('products').select().order("id", { ascending: true })
+
+    const inputImage = document.querySelector('#product-modal-edit-image_url')
+    const inputName = document.querySelector('#product-modal-edit-name')
+    const inputCategory = document.querySelector('#product-modal-edit-category')
+    const inputPrice = document.querySelector('#product-modal-edit-price')
+    const editButton = document.querySelector('#product-modal-edit-btn-save')
+    const cancelButton = document.querySelector('#product-modal-edit-btn-cancel')
+    let currentId = 0
+    function handleCancelButtonClick() {
+        const modal = document.querySelector('#product-modal-edit')
+        modal.close()
+    }
+    async function handleEditButtonClick(id) {
+        const obj = {
+            id: currentId,
+            image_url: inputImage.value,
+            name: inputName.value,
+            category: inputCategory.value,
+            price: Number(inputPrice.value)
+
         }
+        const { error } = await supabase
+            .from('products')
+            .update(obj)
+            .eq('id', currentId)
+        if (error) {
+            console.error(error)
+            handleCancelButtonClick()
+            return
+        }
+        handleCancelButtonClick()
+        Swal.fire({
+            title: 'Producto actualizado',
+            text: 'El producto ha sido actualizado exitosamente',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+        }).then(() => {
+            window.location.reload()
+        })
     }
+    editButton.addEventListener('click', handleEditButtonClick)
+    cancelButton.addEventListener('click', handleCancelButtonClick)
 
-    // Obtén los datos de los usuarios
-    const { data, error } = await supabase.from("users").select();
+    function editProduct(product) {
+        currentId = product.id
+        console.log(product)
+        const modal = document.querySelector('#product-modal-edit')
+        modal.showModal()
+        inputName.value = product.name
+        inputCategory.value = product.category
+        inputPrice.value = product.price
+        inputImage.value = product.image_url
 
-    // Si hay un error al obtener los datos, puedes manejarlo aquí
-    if (error) {
-        console.error("Error al obtener los datos", error);
-        return;
     }
+    data.forEach(product => {
+        const productRow = document.createElement('div')
+        productRow.classList.add('product-row')
 
-    // Si hay datos, continúa con la lógica
-    if (data.length > 0) {
-        const table = document.querySelector(".table");
+        const productId = document.createElement('div')
+        productId.textContent = product.id
+        productId.classList.add('product-id')
+        productId.classList.add('data')
 
-        data.forEach(user => {
-            const createdAt = new Date(user.created_at);
-            const times = createdAt.toLocaleString();
+        const productCategory = document.createElement('div')
+        productCategory.textContent = product.category
+        productCategory.classList.add('product-category')
+        productCategory.classList.add('data')
 
-            // Crear la fila principal
-            const row = document.createElement("div");
-            row.classList.add("users-row");
+        const productImage = document.createElement('img')
+        productImage.src = product.image_url
+        productImage.alt = product.name
+        productImage.classList.add('image')
+        productImage.classList.add('data')
 
-            // Crear las columnas de datos
-            const idData = document.createElement("div");
-            idData.classList.add("users-data");
-            idData.textContent = user.id;
+        const productName = document.createElement('div')
+        productName.textContent = product.name
+        productName.classList.add('product-name')
+        productName.classList.add('data')
 
-            const usernameData = document.createElement("div");
-            usernameData.classList.add("users-data");
-            usernameData.textContent = user.username;
+        const productPrice = document.createElement('div')
+        productPrice.textContent = `${product.price}`
+        productPrice.classList.add('product-price')
+        productPrice.classList.add('data')
 
-            const passwordData = document.createElement("input");
-            passwordData.type = "password";
-            passwordData.value = user.password;
-            passwordData.classList.add("users-data", "users-password-input");
+        const productActions = document.createElement('div')
+        productActions.classList.add('product-actions')
+        productActions.classList.add('data')
+        const editBtn = document.createElement('button')
+        editBtn.textContent = 'Editar'
+        editBtn.classList.add('btn-primary')
+        editBtn.classList.add('btn')
+        editBtn.addEventListener('click', () => {
+            editProduct(product)
+        })
 
-            const createdAtData = document.createElement("div");
-            createdAtData.classList.add("users-data");
-            createdAtData.textContent = times;
+        const deleteBtn = document.createElement('button')
+        deleteBtn.textContent = 'Eliminar'
+        deleteBtn.classList.add('btn-danger')
+        deleteBtn.classList.add('btn')
 
-            const functionsData = document.createElement("div");
-            functionsData.classList.add("users-data");
 
-            // Botón para editar
-            const editBtn = document.createElement("button");
-            editBtn.addEventListener("click", () => {
-                editUser(user.id, user);
-            });
-            editBtn.classList.add("users-edit-btn");
-            editBtn.textContent = "Editar";
-            functionsData.appendChild(editBtn);
+        productActions.appendChild(editBtn)
+        productActions.appendChild(deleteBtn)
 
-            // Botón para eliminar
-            const deleteBtn = document.createElement("button");
-            deleteBtn.addEventListener("click", () => {
-                deleteUser(user.id);
-            });
-            deleteBtn.classList.add("users-delete-btn");
-            deleteBtn.textContent = "Eliminar";
-            functionsData.appendChild(deleteBtn);
+        // Append children to the productRow
+        productRow.appendChild(productId)
+        productRow.appendChild(productImage)
+        productRow.appendChild(productName)
+        productRow.appendChild(productCategory)
+        productRow.appendChild(productPrice)
+        productRow.appendChild(productActions)
 
-            // Añadir las columnas a la fila
-            row.appendChild(idData);
-            row.appendChild(usernameData);
-            row.appendChild(passwordData);
-            row.appendChild(createdAtData);
-            row.appendChild(functionsData);
-
-            // Añadir la fila a la tabla
-            table.appendChild(row);
-        });
-    }
+        document.querySelector('.table').appendChild(productRow)
+    })
 }
-
-// Llamada a la función para iniciar
-fetchDataAndInitialize();
+init()
