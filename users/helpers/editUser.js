@@ -18,8 +18,6 @@ async function validateForm(id) {
             password: modalInputPassword.value
         })
         .eq("id", id)
-    // window.location.reload();
-    // SweetAlert 
     closeModal()
     Swal.fire({
         title: '¡Datos actualizados!',
