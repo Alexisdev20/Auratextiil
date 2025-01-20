@@ -1,0 +1,156 @@
+h1{
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+
+/* Estilos generales para la tabla */
+.catalog table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgb(226, 226, 226);
+}
+
+/* Encabezados de la tabla */
+.catalog table th {
+    background-color: #FF75E6; /* Color verde */
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    border-radius: 0px;
+}
+
+/* Filas de la tabla */
+.catalog table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Última fila de la tabla */
+.catalog table tr:last-child td {
+    font-weight: bold;
+    background-color: #e9f5e9; /* Color suave para el total */
+}
+
+/* Estilo para las imágenes en las celdas */
+.catalog table img {
+    border-radius: 4px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Resaltar filas al pasar el ratón */
+.catalog table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .catalog table {
+        font-size: 12px;
+    }
+
+    .catalog table img {
+        width: 40px;
+    }
+}
+
+.compras-realizadas {
+    width: 60%;
+    margin: 20px auto;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.items-container {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.item-header, .item-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.item-header {
+    font-weight: bold;
+    background-color: #FF75E6;
+    border-radius: 8px 8px 0 0;
+    padding: 15px 0;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.item-rowproducto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-rowimage {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+    background: #f3f3f3;
+    border-radius: 0 0 8px 8px;
+}
+
+.item-header__producto{
+    padding-left: 10px;
+}
+.item-row__cantidad{
+    padding-left: 28px;
+}
+
+.item-row__precio{
+    margin-top: 55px;
+}
+
+.item-row__cantidad{
+    margin-top: 55px;
+    color: black;
+}
+
+.item-row__total{
+    margin-top: 55px;
+}
+
+.total-row__label{
+    padding-left: 20px;
+    padding-bottom: 7px;
+}
+
+.total-row__value{
+    padding-right: 15px;
+}
+
+.total-row{
+    background-color: #84C6CC; 
+}
+
+

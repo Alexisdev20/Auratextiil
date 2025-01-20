@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/global.css" />
+    <link rel="stylesheet" href="kids.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.0/dist/sweetalert2.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.5.0/dist/sweetalert2.min.js"></script>
+    <script src="https://kit.fontawesome.com/247dadd944.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="/images/loguito.png" alt="Logo" />
+      </div>
+
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar..." />
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+      <div class="icons">
+        <i class="fa-solid fa-user user-icon"></i>
+        <div class="user-options">
+          <a class="purchase-button" href="/purchase/index.html">historial de compras</a>
+          <button id="logout-btn" class="logout">cerrar sesion</button>
+        </div>
+        <!-- Icono de carrito con contador -->
+        <a class="cart-icon" href="/carrito/index.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="cart-count" class="cart-count">0</span>
+          <!-- Contador de productos -->
+        </a>
+      </div>
+    </header>
+
+    <!-- <img src="images/anuncio.jpeg" alt="Imagen 1"> -->
+    <nav>
+      <a href="/">Inicio</a>
+      <!-- Asume que "Inicio" vuelve al archivo principal -->
+      <a href="/male/index.html">Caballeros</a>
+      <a href="/female/index.html">Damas</a>
+      <!-- Actualiza si tienes la carpeta y archivo de Damas -->
+      <a href="/kids/index.html">Niños</a>
+      <!-- Actualiza si tienes la carpeta y archivo de Niños -->
+      <a href="/us/index.html">Nosotros</a>
+      <!-- Actualiza si tienes la carpeta y archivo de Nosotros -->
+    </nav>
+
+    <!--Ropas-->
+    <div class="catalog"></div>
+    <!--footer-->
+    <footer class="bg-dark text-light py-4">
+      <div class="container">
+        <div class="row">
+          <!-- Primera columna: Secciones -->
+          <div class="col-md-4">
+            <h5>Secciones</h5>
+            <ul class="list-unstyled">
+              <li><a href="nosotros.html" class="text-light text-decoration-none">Nosotros</a></li>
+              <li><a href="tus-pedidos.html" class="text-light text-decoration-none">Tus Pedidos</a></li>
+              <li><a href="productos.html" class="text-light text-decoration-none">Productos</a></li>
+            </ul>
+          </div>
+    
+          <!-- Segunda columna: Redes Sociales -->
+          <div class="col-md-4">
+            <h5>Redes Sociales</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://facebook.com" target="_blank" class="text-light text-decoration-none">
+                <i class="fab fa-facebook-f me-2"></i>Facebook: Auratextil</a></li>
+              <li><a href="https://wa.me/987456123" target="_blank" class="text-light text-decoration-none">
+                <i class="fab fa-whatsapp me-2"></i>WhatsApp: 987456123</a></li>
+              <li><a href="https://instagram.com" target="_blank" class="text-light text-decoration-none">
+                <i class="fab fa-instagram me-2"></i>Instagram: @Auratextil</a></li>
+              <li><a href="https://tiktok.com" target="_blank" class="text-light text-decoration-none">
+                <i class="fab fa-tiktok me-2"></i>TikTok: Aura_textil</a></li>
+              <li><a href="#" target="_blank" class="text-light text-decoration-none">
+                <i class="fas fa-envelope me-2"></i>Gmail: auratextil2@gmail.com</a></li>
+            </ul>
+          </div>
+    
+          <!-- Tercera columna: Dirección -->
+          <div class="col-md-4">
+            <h5>Dirección</h5>
+            <p>Av. Los ruiseñores 457, Mz B Lt,2 
+              <br>
+              Referencia: Cruce con Calle las calandrinas
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- <script src="/components/addToCarFunction.js"></script> -->
+    <script type="module" src="/helpers/index.js"></script>
+  </body>
+</html>

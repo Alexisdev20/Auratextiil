@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Esteban&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+body {
+    margin: 0;
+    background-color: #EFEFEF = fondo;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #84c6cc ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.header .logo img {
+    max-height: 50px; /* Ajusta la altura de la imagen */
+    width: auto; /* Mantiene las proporciones */
+}
+
+/* Barra de búsqueda */
+.header .search-bar {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.header .search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+.header .search-bar button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.header .search-bar button i {
+    font-size: 16px;
+}
+
+/* Iconos a la derecha */
+.header .icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header .icons i {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.header .icons i:hover {
+    color: #007BFF;
+}
+
+nav{
+    background-color: #D2FF72;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: "Esteban", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Estilo del contenedor del carrusel */
+.carousel {
+  width: 80%; /* Ajusta el ancho del carrusel */
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  height: 400px; /* Altura fija del carrusel */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo para las imágenes dentro del carrusel */
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Transición suave al cambiar de imagen */
+}
+
+.carousel-item {
+  flex: 0 0 100%; /* Cada div ocupa el 100% del ancho */
+  height: 100%; /* Cada div ocupa el 100% de la altura */
+}
+
+.carousel-item img {
+  width: 100%; /* Las imágenes ocuparán todo el ancho */
+  height: 100%; /* Las imágenes ocuparán toda la altura */
+  object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
+  border-radius: 10px; /* Bordes redondeados opcionales */
+}
+
+
+/* Estilo de los botones de navegación */
+.buttons {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+button {
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 5px; /* Bordes redondeados */
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al pasar el cursor */
+}
+
+button:focus {
+  outline: none; /* Quita el borde de enfoque */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1024px) {
+  .carousel {
+      width: 90%; /* Carrusel más ancho en pantallas medianas */
+      height: 350px; /* Altura reducida */
+  }
+
+  button {
+      padding: 8px; /* Botones más pequeños */
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+      width: 100%; /* Ocupa todo el ancho en dispositivos pequeños */
+      height: 300px; /* Altura más reducida */
+  }
+
+  button {
+      font-size: 16px; /* Botones más pequeños */
+      padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel {
+      height: 250px; /* Altura mínima para móviles */
+  }
+
+  button {
+      font-size: 14px; /* Texto más pequeño en botones */
+      padding: 5px;
+  }
+}
+
+
+ 
+  /* some */
+  .icons{
+    position: relative;
+}
+.user-options{
+    user-select: none;
+    /* width: 150px; */
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    top: 150%;
+    left: -250%;
+    position: absolute;
+    /* padding: 10px; */
+    border-radius: 10px;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: start;
+    overflow: hidden;
+    display: none;
+}
+.user-options.active{
+    display: flex;
+}
+.purchase-button {
+    background-color: white;
+    font-size: 1rem;
+    /* background-color: #28a745; */
+    /* width: 100%; */
+    color: black;
+    text-decoration: none;
+    /* white-space: nowrap; */
+    padding: 0;
+    padding: 10px;
+}
+.purchase-button:hover{
+    background-color: rgb(228, 228, 228);
+}
+
+.logout{
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    text-align: start;
+    padding: 0;
+    padding: 10px;
+    border-radius: 0px;
+}
+
+.logout:hover{
+    background-color: rgb(253, 225, 225);
+}
+.textoin{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 47px;
+    margin-bottom: 47px;
+}
+
+.imagen-fija {
+    width: 100%;  
+    object-fit: cover; 
+    border-radius: 5px;
+    margin-bottom: 27px;
+     
+}
+
+.banner2{
+    margin-bottom: 27px;
+}
+
+/* Estilo general para el contenedor */
+#titulo {
+  font-size: 24px; /* Tamaño general */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilo para cada tipo de letra */
+.lemon {
+  font-family: 'Lemon', sans-serif;
+  color: #FF5733; 
+}
+
+.noto {
+  font-family: 'Noto Sans Tai Tham', sans-serif;
+  color: #28A745; 
+}
+
+.league {
+  font-family: 'League Gothic', sans-serif;
+  color: #007BFF; 
+  font-weight: bold; /* Resalta más */
+}
+
+.letras {
+   margin-top: 30px; 
+   margin-bottom: 30px; 
+}
+
+.tituloD{
+   font-family: 'League Gothic';
+   font-size: 50px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #28a745; /* Color verde */
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 12px;
+}
+
+footer h5 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer ul li a:hover {
+  color: #ffc107; /* Cambia el color al pasar el mouse */
+}

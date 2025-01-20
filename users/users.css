@@ -1,0 +1,74 @@
+.body-users {
+  /* padding:10px; */
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+.table {
+  padding: 10px;
+}
+.users-row {
+  /* margin-top: 20px; */
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgb(226, 226, 226);
+  border: 1px solid black;
+  border-top: none;
+  /* border-radius: 8px; */
+}
+.users-row.users-header {
+  background-color: rgb(153, 152, 152);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-top: 1px solid black;
+}
+.users-data {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  /* background-color: aquamarine; */
+}
+.users-password-input {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+
+.users-data .users-edit-btn {
+  /* background-color: red; */
+  background: rgb(247, 207, 99);
+  border-radius: 12px;
+}
+.users-data .users-delete-btn {
+  /* background-color: red; */
+  background: rgb(240, 104, 104);
+  color: white;
+  border-radius: 12px;
+  margin-left: 1rem;
+}
+
+#users-modal-edit-btn-save {
+  background-color: rgb(57, 121, 240);
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 16px;
+}
+.users-modal-edit {
+  position: relative;
+}
+.users-modal-close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1000px;
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  min-width: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background-color: rgb(252, 74, 74);
+  /* color: white; */
+}

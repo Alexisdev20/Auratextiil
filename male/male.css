@@ -1,0 +1,139 @@
+/* Estilo del catálogo */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas grandes */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.product img {
+    width: 100%; /* Asegura que las imágenes se adapten al ancho de su contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    max-width: 250px; /* Limita el tamaño máximo para todas las imágenes */
+    border-radius: 8px;
+}
+
+.product h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product p {
+    font-size: 16px;
+    color: #555;
+}
+
+.product button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #218838;
+}
+
+/* Efecto hover en los productos */
+.product:hover {
+    transform: scale(1.05); /* Aumenta el tamaño */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+.custom-popup {
+    font-size: 16px; /* Tamaño de texto pequeño */
+    padding: 10px 20px; /* Espaciado interno para que se vea más compacto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* CARRITO */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #28a745; /* Color verde */
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 12px;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+
+/* Para pantallas medianas (tablets y pantallas medianas) */
+@media (max-width: 1024px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 15px;
+    }
+    .product img {
+        max-width: 200px; /* Reduce el tamaño máximo de las imágenes */
+    }
+}
+
+/* Para pantallas pequeñas (smartphones) */
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(1, 1fr); /* 1 columna */
+        gap: 10px;
+    }
+    .product {
+        padding: 15px; /* Reduce el padding de los productos */
+    }
+    .product img {
+        max-width: 150px; /* Reduce aún más el tamaño máximo de las imágenes */
+    }
+    .product h3 {
+        font-size: 16px; /* Ajusta el tamaño del texto */
+    }
+    .product p {
+        font-size: 14px;
+    }
+    .product button {
+        font-size: 14px; /* Botón más pequeño */
+        padding: 8px 16px;
+    }
+}
+
+/* Para pantallas extra pequeñas (menos de 480px) */
+@media (max-width: 480px) {
+    .catalog {
+        padding: 10px; /* Menos espacio alrededor */
+    }
+    .product {
+        padding: 10px;
+    }
+    .product img {
+        max-width: 120px; /* Imágenes aún más pequeñas */
+    }
+    .product h3 {
+        font-size: 14px;
+    }
+    .product p {
+        font-size: 12px;
+    }
+    .product button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}

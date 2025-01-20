@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Koulen&display=swap');
+
+.contenedor1{
+    display: flex;
+}
+
+.texto h1 {
+    font-family: 'Playfair Display', sans-serif;
+    color: #FF75E6;
+}
+
+.texto p {
+    font-family: 'Esteban', serif;
+    font-size: 25px;
+    margin-right: 50px;
+}
+
+.mundo {
+   text-align: center;
+}
+
+.mundo-texto {
+    font-family:"Koulen", sans-serif;
+    margin: 20px;
+    font-size: 23px;
+}
+/*NUEVA INFO*/
+.sobre-nosotros {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1900px;
+    margin: 0px auto;
+    padding: 20px;
+    gap: 20px;
+    background: linear-gradient(135deg, #84C6CC, #FF75E6);
+  }
+  
+  .sobre-nosotros .imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    width: 700px;
+    height: 500px;
+  }
+  
+  .sobre-nosotros .texto {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .sobre-nosotros .texto h1 {
+    font-size: 42px;
+    color: #000000;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .sobre-nosotros .texto p {
+    font-size: 26px;
+    line-height: 1.6;
+    color: #000000;
+    text-align: justify;
+  }
+  
+  /* Responsividad para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .sobre-nosotros {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .sobre-nosotros .texto {
+      padding-left: 0;
+    }
+  }
+
+/*MISION CSS*/
+  .container-mvv {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px;
+    background: linear-gradient(135deg, #D2FF72, #84C6CC);
+  }
+  
+  .mvv-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mvv-item h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .mvv-item p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container-mvv {
+      flex-direction: column;
+      gap: 30px;
+    }
+  
+    .mvv-item {
+      text-align: left;
+    }
+  }
+
+
+  
+.sub-titulo{
+    text-align: center;
+    font-family:"Esteban", sans-serif;
+}
+
+.marca_1{
+    display: flex;
+    justify-content: center;    
+}
+
+/*Imagenes marcas*/
+.marca_1 img {
+  margin: 0 40px;
+  max-width: 100%; /* Asegura que las imágenes no excedan el ancho de su contenedor */
+  height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.marca_2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten a varias filas en pantallas pequeñas */
+}
+
+.marca_2 img {
+  margin: 40px;
+  max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
+  height: auto; /* Mantiene la proporción de las imágenes */
+}
+
+.textdi{
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 25px;
+  font-family: "Esteban", sans-serif;
+}
+
+#map{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Responsividad */
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .marca_1 img {
+      margin: 0 20px; /* Reduce el margen horizontal */
+      max-width: 80%; /* Reduce ligeramente el tamaño máximo de las imágenes */
+  }
+
+  .marca_2 img {
+      margin: 20px; /* Reduce el margen en pantallas medianas */
+      max-width: 80%; /* Reduce el tamaño de las imágenes */
+  }
+}
+
+/* Para pantallas pequeñas (smartphones en modo horizontal) */
+@media (max-width: 768px) {
+  .marca_1 img {
+      margin: 0 10px; /* Reduce aún más el margen horizontal */
+      max-width: 70%; /* Ajusta el tamaño máximo */
+  }
+
+  .marca_2 img {
+      margin: 10px; /* Reduce el margen para smartphones */
+      max-width: 70%; /* Ajusta el tamaño máximo */
+  }
+}
+
+/* Para pantallas muy pequeñas (smartphones en modo vertical) */
+@media (max-width: 480px) {
+  .marca_1 img {
+      margin: 5px 0; /* Quita el margen horizontal, solo deja espacio vertical */
+      max-width: 90%; /* Las imágenes ocupan la mayor parte del ancho disponible */
+  }
+
+  .marca_2 img {
+      margin: 5px 0; /* Similar al margen vertical */
+      max-width: 90%; /* Ajusta el tamaño máximo */
+  }
+
+  .marca_2 {
+      flex-direction: column; /* Cambia la dirección del flex a una sola columna */
+      align-items: center; /* Centra las imágenes en pantalla */
+  }
+}
+
+
+#final{
+    padding-top: 20px;
+}
+
+#final h3{
+    text-align: center;
+}
+
+#final li a{
+    margin-top: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.rd{
+    border-radius: 10px;
+    margin: 0px; 
+    text-align: center;
+    padding: 25px;
+    padding-right: 73px;
+}
+
+#dv{
+    font-family: 'Nunito Sans', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}

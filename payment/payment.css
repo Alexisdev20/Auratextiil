@@ -1,0 +1,109 @@
+/* estilos */
+.payment-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .payment-form h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .payment-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #555;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .payment-form input:focus {
+    border-color: #e100ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  .payment-form p {
+    margin: 10px 0 5px;
+    padding: 10px; /* Añadir espacio interno */
+    font-size: 14px;
+    color: #856404; /* Color de texto legible */
+    background-color: #fff3cd; /* Fondo amarillo suave */
+    border: 1px solid #ffeeba; /* Borde para destacar */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  .payment-form button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .payment-form button:hover {
+    background-color: #218838;
+    transform: scale(1.03);
+  }
+
+  /* Estilo base para el dialog */
+dialog {
+  width: 300px;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Centrar el modal en la pantalla */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  backdrop-filter: blur(3px); /* Añadir desenfoque */
+}
+
+/* Estilo del texto dentro del modal */
+dialog p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+ 
+  /* responsivo */
+  @media (max-width: 480px) {
+    .payment-form {
+      padding: 15px;
+    }
+  
+    .payment-form h3 {
+      font-size: 20px;
+    }
+  
+    .payment-form input {
+      font-size: 14px;
+    }
+  
+    .payment-form button {
+      font-size: 14px;
+    }
+  }

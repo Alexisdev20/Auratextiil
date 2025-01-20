@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="payment.css" />
+  </head>
+  <body>
+    <form class="payment-form" action="">
+      <h3>Pago con tarjeta</h3>
+      <input type="text" placeholder="Numero de tarjeta" />
+      <input id="payment_fullname" type="text" placeholder="Nombre del titular"/>
+      <p>Fecha de expiración</p>
+      <input type="month" placeholder="Fecha" min="2024-12" value="2024-12" />
+      <input type="text" placeholder="CVV" />
+      <input id="payment_email" type="email" placeholder="Correo" />
+      <button id="payment_btn" type="button">Enviar</button>
+    </form>
+    
+    <dialog id="dialog">
+      <p>Se ha completado la compra, gracias por elegir a Aura Textil.</p>
+    </dialog>
+    <script src="payment.js" type="module"></script>
+    <script type="module" src="../helpers/getProducts.js"></script>
+  </body>
+</html>
