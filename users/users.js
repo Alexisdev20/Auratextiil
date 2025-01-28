@@ -3,78 +3,86 @@ import { deleteUser } from "./helpers/deleteUser";
 import { editUser } from "./helpers/editUser";
 
 async function init() {
-    if (localStorage.getItem("user")) {
-        const user = JSON.parse(localStorage.getItem("user"))
-        if (user.admin === false) {
-            window.location.replace("/")
+    const userJSON = localStorage.getItem("user");
+    if (userJSON) {
+        const user = JSON.parse(userJSON);
+        if (!user.admin) {
+            window.location.replace("/");
         }
     }
-    const { data } = await supabase
-        .from("users")
-        .select()
-    // console.log(data)
-    if (data.length > 0) {
+
+    try {
+        const { data, error } = await supabase.from("users").select();
+        if (error) {
+            console.error("Error al obtener los usuarios:", error);
+            return;
+        }
+
+        if (data.length === 0) {
+            const table = document.querySelector(".table");
+            if (table) {
+                const emptyMessage = document.createElement("div");
+                emptyMessage.textContent = "No hay usuarios registrados.";
+                emptyMessage.classList.add("empty-message");
+                table.appendChild(emptyMessage);
+            }
+            return;
+        }
+
         const table = document.querySelector(".table");
-        data.forEach(user => {
-            const data = new Date(user.created_at);
-            const times = data.toLocaleString()
-            // Crear la fila principal
-            const row = document.createElement("div");
-            row.classList.add("users-row");
-            //crea el id table 
-            const idData = document.createElement("div");
-            idData.classList.add("users-data");
-            idData.textContent = user.id;
-            // Crear las columnas de datos
-            const usernameData = document.createElement("div");
-            usernameData.classList.add("users-data");
-            usernameData.textContent = user.username;
+        if (!table) {
+            console.error("No se encontró el elemento con clase 'table'");
+            return;
+        }
 
-            const passwordData = document.createElement("input");
-            passwordData.type = "password";
-            passwordData.value = user.password;
-            passwordData.classList.add("users-data");
-            passwordData.classList.add("users-password-input");
-            // passwordData.textContent = user.password;
-
-            const createdAtData = document.createElement("div");
-            createdAtData.classList.add("users-data");
-            createdAtData.textContent = times;
-
-            // const adminData = document.createElement("div");
-            // adminData.classList.add("users-data");
-            // adminData.textContent = user.admin;
-
-            const functionsData = document.createElement("div");
-            functionsData.classList.add("users-data");
-            const editBtn = document.createElement("button");
-            editBtn.addEventListener("click", () => {
-                editUser(user.id, user)
-            })
-            editBtn.classList.add("users-edit-btn");
-            editBtn.textContent = "Editar";
-            functionsData.appendChild(editBtn);
-            const deleteBtn = document.createElement("button");
-            deleteBtn.addEventListener("click", () => {
-                // deleteUser(user.id)
-                deleteUser(user.id)
-            })
-            deleteBtn.classList.add("users-delete-btn");
-            deleteBtn.textContent = "Eliminar";
-            functionsData.appendChild(deleteBtn);
-
-            // Añadir las columnas a la fila
-            row.appendChild(idData)
-            row.appendChild(usernameData);
-            row.appendChild(passwordData);
-            row.appendChild(createdAtData);
-            // row.appendChild(adminData);
-            row.appendChild(functionsData);
-
-            // Añadir la fila a la tabla
+        data.forEach((user) => {
+            const row = createUserRow(user);
             table.appendChild(row);
         });
-
+    } catch (err) {
+        console.error("Error inesperado:", err);
     }
 }
-init()
+
+function createUserRow(user) {
+    const row = document.createElement("div");
+    row.classList.add("users-row");
+
+    const idData = document.createElement("div");
+    idData.classList.add("users-data");
+    idData.textContent = user.id;
+
+    const usernameData = document.createElement("div");
+    usernameData.classList.add("users-data");
+    usernameData.textContent = user.username;
+
+    const passwordData = document.createElement("input");
+    passwordData.type = "password";
+    passwordData.readOnly = true;
+    passwordData.value = user.password; // Más seguro
+    passwordData.classList.add("users-data", "users-password-input");
+
+    const createdAtData = document.createElement("div");
+    createdAtData.classList.add("users-data");
+    createdAtData.textContent = new Date(user.created_at).toLocaleString();
+
+    const functionsData = document.createElement("div");
+    functionsData.classList.add("users-data");
+
+    const editBtn = document.createElement("button");
+    editBtn.addEventListener("click", () => editUser(user.id, { ...user }));
+    editBtn.classList.add("users-edit-btn");
+    editBtn.textContent = "Editar";
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.addEventListener("click", () => deleteUser(user.id));
+    deleteBtn.classList.add("users-delete-btn");
+    deleteBtn.textContent = "Eliminar";
+
+    functionsData.append(editBtn, deleteBtn);
+
+    row.append(idData, usernameData, passwordData, createdAtData, functionsData);
+    return row;
+}
+
+init();

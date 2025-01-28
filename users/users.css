@@ -9,10 +9,10 @@
 }
 .users-row {
   /* margin-top: 20px; */
-  padding: 10px;
+  padding: 0px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  background-color: rgb(226, 226, 226);
+  background-color: #dbe2e1;
   border: 1px solid black;
   border-top: none;
   /* border-radius: 8px; */
@@ -33,6 +33,7 @@
   background-color: transparent;
   border: none;
   text-align: center;
+  outline: none;
 }
 
 .users-data .users-edit-btn {
@@ -47,6 +48,119 @@
   border-radius: 12px;
   margin-left: 1rem;
 }
+
+/*PARA EL PANEL*/
+
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1b3131;
+  color: white;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #ecf0f1;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #bdc3c7;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #294969;
+  color: white;
+}
+
+.content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.users-header {
+  background-color: #0c5baa;
+  color: white;
+  font-weight: bold;
+}
+
+.users-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.users-data {
+  padding: 15px 10px;
+}
+
+#users-modal-edit, #users-modal-delete {
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+#users-modal-edit {
+  max-width: 400px;
+}
+
+h1{
+  text-align: center;
+}
+
+#users-modal-edit-btn-save {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#users-modal-edit-btn-save:hover {
+  background-color: #2ecc71;
+}
+
+/*-------------------------*/
+
+form{
+  padding: 10px;
+}
+
+input[type="text"] {
+  margin-bottom: 10px; 
+}
+
 
 #users-modal-edit-btn-save {
   background-color: rgb(57, 121, 240);

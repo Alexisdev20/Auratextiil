@@ -89,6 +89,7 @@ async function init() {
         const productActions = document.createElement('div')
         productActions.classList.add('product-actions')
         productActions.classList.add('data')
+        
         const editBtn = document.createElement('button')
         editBtn.textContent = 'Editar'
         editBtn.classList.add('btn-primary')
@@ -97,14 +98,7 @@ async function init() {
             editProduct(product)
         })
 
-        const deleteBtn = document.createElement('button')
-        deleteBtn.textContent = 'Eliminar'
-        deleteBtn.classList.add('btn-danger')
-        deleteBtn.classList.add('btn')
-
-
         productActions.appendChild(editBtn)
-        productActions.appendChild(deleteBtn)
 
         // Append children to the productRow
         productRow.appendChild(productId)

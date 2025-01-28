@@ -1,38 +1,123 @@
-.body-products {
+.body {
+  /* padding:10px; */
   display: grid;
+  min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
 }
-.product-row-header{
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    border:2px solid rgba(0, 0, 0, 0.219);
-    background-color: rgba(0, 0, 0, 0.219);
+.table {
+  padding: 0px;
 }
+
 .product-row {
-  /* padding: 20px; */
+  /* margin-top: 20px; */
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  /* background: red; */
-  border-bottom: 2px solid rgba(0, 0, 0, 0.219);
+  grid-template-columns: 1fr 2fr 2fr 2fr 1fr 2fr;
+  align-items: center;
+  background-color: #dbe2e1;
+  box-shadow: 0 4px 6px rgba(240, 151, 151, 0.1);
+  padding: 10px;
 }
-.image {
-    margin: 0 auto;
-  width: 150px;
-  /* height: 50%; */
-  object-fit: cover;
-  /* height: ; */
+.product-row.product-header {
+  background-color: rgb(153, 152, 152);
+  font-weight: bold;
+  text-transform: uppercase;
+  border-top: 1px solid black;
 }
 
 .data {
-  /* border-left: 2px solid rgba(0, 0, 0, 0.219); */
-  padding: 10px;
-  gap: 10px;
   display: flex;
-  /* flex-direction: column; */
-  justify-content: center;
+  justify-self: center;
   align-items: center;
-  /* background-color: red; */
+  color: rgb(0, 0, 0);
+  /* background-color: aquamarine; */
+}
+.titulo{
+  color: white;
 }
 
-/* .btn-danger{} */
+.image {
+  margin: 0 auto;
+  width: 150px;
+/* height: 50%; */
+  object-fit: cover;
+/* height: ; */
+border-radius: 15px;
+
+}
+
+/*PARA EL PANEL*/
+
+body {
+  display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #1b3131;
+  color: white;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #ecf0f1;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #bdc3c7;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #294969;
+  color: white;
+}
+
+.content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  max-width: 1620px;
+  margin: 20px auto;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+#product-modal-edit{
+  border-radius: 10px;
+  border: none;
+}
+
+.guardar, .cancelar{
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #3164c2;
+}
+
+h3{
+  padding: 10px;
+}
+
+/*-------------------------*/
+
+
+

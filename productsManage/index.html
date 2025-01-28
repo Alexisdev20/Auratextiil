@@ -19,186 +19,96 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body class="body-products">
-    <header>
-      <div class="header">
-        <div class="logo">
-          <img src="/images/loguito.png" alt="Logo" />
-        </div>
+    <link rel="stylesheet" href="./styles.css"/>
+ </head>
+  <body>
+    <div class="sidebar">
+      <h2>Menú</h2>
+      <a href="../users/index.html">Panel de Usuarios</a>
+      <a href="./index.html">Panel de Productos</a>
+    </div>
 
-        <div class="search-bar">
-          <input type="text" placeholder="Buscar..." />
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
-
-        <div class="icons">
-          <i class="fa-solid fa-user user-icon"></i>
-          <div class="user-options">
-            <a class="purchase-button" href="/purchase/index.html"
-              >historial de compras</a
-            >
-            <button id="logout-btn" class="logout">cerrar sesion</button>
-          </div>
-          <!-- Icono de carrito con contador -->
-          <a class="cart-icon" href="/carrito/index.html">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span id="cart-count" class="cart-count">0</span>
-            <!-- Contador de productos -->
-          </a>
-        </div>
-      </div>
-      <nav>
-        <a href="/">Inicio</a>
-        <!-- Asume que "Inicio" vuelve al archivo principal -->
-        <a href="/male/index.html">Caballeros</a>
-        <a href="/female/index.html">Damas</a>
-        <!-- Actualiza si tienes la carpeta y archivo de Damas -->
-        <a href="/kids/index.html">Niños</a>
-        <!-- Actualiza si tienes la carpeta y archivo de Niños -->
-        <a href="/us/index.html">Nosotros</a>
-        <!-- Actualiza si tienes la carpeta y archivo de Nosotros -->
-      </nav>
-    </header>
-    <main class="table">
-      <div class="product-row-header">
-        <div class="data">id</div>
-        <div class="data">imagen</div>
-        <div class="data">nombre</div>
-        <div class="data">category</div>
-        <div class="data">precio</div>
-        <div class="data">acciones</div>
-      </div>
-    </main>
-    <dialog id="product-modal-edit">
-      <button class="product-modal-close-btn">x</button>
-      <h3>Edit Product</h3>
-      <form>
-        <input
-          type="text"
-          placeholder="imagen"
-          id="product-modal-edit-image_url"
-        />
-        <input type="text" placeholder="nombre" id="product-modal-edit-name" />
-        <input
-          type="text"
-          placeholder="category"
-          id="product-modal-edit-category"
-        />
-        <input type="text" placeholder="precio" id="product-modal-edit-price" />
-      </form>
-      <button
-        class="btn-primary"
-        id="product-modal-edit-btn-save"
-        type="button"
-      >
-        guardar
-      </button>
-      <!-- cancel button -->
-      <button
-        class="btn-danger"
-        id="product-modal-edit-btn-cancel"
-        type="button"
-      >
-        cancelar
-      </button>
-    </dialog>
-    <!--footer-->
-    <footer class="bg-dark text-light py-4 footer">
-      <div class="container">
-        <div class="row">
-          <!-- Primera columna: Secciones -->
-          <div class="col-md-4">
-            <h5>Secciones</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a href="nosotros.html" class="text-light text-decoration-none"
-                  >Nosotros</a
-                >
-              </li>
-              <li>
-                <a
-                  href="tus-pedidos.html"
-                  class="text-light text-decoration-none"
-                  >Tus Pedidos</a
-                >
-              </li>
-              <li>
-                <a href="productos.html" class="text-light text-decoration-none"
-                  >Productos</a
-                >
-              </li>
-            </ul>
+    <div class="content">
+      <header>
+        <div class="header">
+          <div class="logo">
+            <img src="/images/loguito.png" alt="Logo" />
           </div>
 
-          <!-- Segunda columna: Redes Sociales -->
-          <div class="col-md-4">
-            <h5>Redes Sociales</h5>
-            <ul class="list-unstyled">
-              <li>
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  class="text-light text-decoration-none"
-                >
-                  <i class="fab fa-facebook-f me-2"></i>Facebook: Auratextil</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://wa.me/987456123"
-                  target="_blank"
-                  class="text-light text-decoration-none"
-                >
-                  <i class="fab fa-whatsapp me-2"></i>WhatsApp: 987456123</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  class="text-light text-decoration-none"
-                >
-                  <i class="fab fa-instagram me-2"></i>Instagram: @Auratextil</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://tiktok.com"
-                  target="_blank"
-                  class="text-light text-decoration-none"
-                >
-                  <i class="fab fa-tiktok me-2"></i>TikTok: Aura_textil</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  target="_blank"
-                  class="text-light text-decoration-none"
-                >
-                  <i class="fas fa-envelope me-2"></i>Gmail:
-                  auratextil2@gmail.com</a
-                >
-              </li>
-            </ul>
+          <div class="search-bar">
+            <h1>PANEL DE PRODUCTOS</h1>
           </div>
 
-          <!-- Tercera columna: Dirección -->
-          <div class="col-md-4">
-            <h5>Dirección</h5>
-            <p>
-              Av. Los ruiseñores 457, Mz B Lt,2
-              <br />
-              Referencia: Cruce con Calle las calandrinas
-            </p>
+          <div class="icons">
+            <i class="fa-solid fa-user user-icon"></i>
+            <div class="user-options">
+              <button id="logout-btn" class="logout">cerrar sesion</button>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </header>
 
-    <!-- <script src="/components/addToCarFunction.js"></script> -->
+      <main>
+        <div class="table">
+         <div class="product-row product-header">
+           <div class="data titulo">id</div>
+           <div class="data titulo">imagen</div>
+           <div class="data titulo">nombre</div>
+           <div class="data titulo">category</div>
+           <div class="data titulo">precio</div>
+           <div class="data titulo">acciones</div>
+         </div>
+
+          <!-- Content goes here --> 
+
+        </div>
+      
+        <!-- Modals -->
+        <dialog id="product-modal-edit">
+          <h3>Editar productos</h3>
+          <form>
+            <label for="users-modal-edit-password">Imagen url:</label>
+            <input
+              type="text"
+              placeholder="imagen"
+              id="product-modal-edit-image_url"
+            />
+            <label for="users-modal-edit-password">Nombre del producto:</label>
+            <input type="text" placeholder="nombre" id="product-modal-edit-name" />
+            <br></br>
+            <label for="users-modal-edit-password">Categoria:</label>
+            <input
+              type="text"
+              placeholder="category"
+              id="product-modal-edit-category"
+            />
+            <label for="users-modal-edit-password"> ㅤㅤㅤㅤㅤㅤㅤPrecio:</label>
+            <input type="text" placeholder="precio" id="product-modal-edit-price" />
+          </form>
+          <button class="guardar"
+            class="btn-primary"
+            id="product-modal-edit-btn-save"
+            type="button"
+          >
+            guardar
+          </button>
+          <!-- cancel button -->
+          <button class="cancelar"
+            class="btn-danger"
+            id="product-modal-edit-btn-cancel"
+            type="button"
+          >
+            cancelar
+          </button>
+        </dialog>
+
+        <dialog id="users-modal-delete">
+          <button id="users-delete-confirm">Eliminar</button>
+          <button id="users-delete-cancel">Cancelar</button>
+        </dialog>
+      </main>
+   </div>
+   
     <script type="module" src="/helpers/index.js"></script>
     <script type="module" src="./productsManage.js"></script>
   </body>
