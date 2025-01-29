@@ -117,6 +117,13 @@ h3{
   padding: 10px;
 }
 
+.buttonpro{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
 /*-------------------------*/
 
 

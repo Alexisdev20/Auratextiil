@@ -15,6 +15,9 @@ async function init() {
         modal.close()
     }
     async function handleEditButtonClick(id) {
+         if(inputName.value === "" || inputImage.value === "" || inputCategory.value === "" || inputPrice.value === ""){
+            return
+         }
         const obj = {
             id: currentId,
             image_url: inputImage.value,

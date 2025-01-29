@@ -66,14 +66,16 @@
         <dialog id="users-modal-edit">
           <button class="users-modal-close-btn">x</button>
           <h3>Editar usuario</h3>
-          <form>
+
+          <form id="formulario">
             <label for="users-modal-edit-username">Usuario ㅤ:</label>
-            <input type="text" placeholder="nombre de usuario" id="users-modal-edit-username" />
+            <input type="text" placeholder="nombre de usuario" id="users-modal-edit-username" required/>
         
             <label for="users-modal-edit-password">Contraseña:</label>
-            <input type="text" placeholder="contraseña" id="users-modal-edit-password" />
+            <input type="text" placeholder="contraseña" id="users-modal-edit-password" required/>
+            <button id="users-modal-edit-btn-save" type="submit">Guardar</button>
         </form>
-          <button id="users-modal-edit-btn-save" type="button">Guardar</button>
+          
         </dialog>
 
         <dialog id="users-modal-delete">

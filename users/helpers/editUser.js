@@ -11,6 +11,10 @@ function closeModal() {
 }
 usersModalEditCloseBtn.addEventListener("click", closeModal)
 async function validateForm(id) {
+    if(modalInputPassword.value === "" || modalInputUsername.value === "")
+        {
+            return  
+        }
     const { data, error } = await supabase
         .from("users")
         .update({
@@ -30,7 +34,7 @@ async function validateForm(id) {
 }
 export async function editUser(userId, userData) {
     modalInputUsername.value = userData.username
-    modalInputPassword.value = userData.password
+    modalInputPassword.value = userData.password 
     modalUsersEdit.showModal()
     saveBtn.addEventListener("click", () => {
         validateForm(userId)
