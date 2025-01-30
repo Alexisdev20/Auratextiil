@@ -16,6 +16,7 @@ async function init() {
     }
     async function handleEditButtonClick(id) {
          if(inputName.value === "" || inputImage.value === "" || inputCategory.value === "" || inputPrice.value === ""){
+            console.log
             return
          }
         const obj = {
