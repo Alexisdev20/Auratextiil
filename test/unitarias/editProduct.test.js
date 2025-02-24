@@ -3,7 +3,7 @@ import edit from '../../productsManage/edit';
 
 describe('edit a product', async () => {
     it('debería edit correctamente un producto', async () => {
-        const productId = 1
+        const productId = 0
         const product = {
             name: 'corbata para hombre',
             price: 50,

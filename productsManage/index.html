@@ -60,52 +60,90 @@
          </div>
 
           <!-- Content goes here --> 
+          <div id="paginacion">
+            <button id="pagina-anterior">Anterior</button>
+            <span id="numero-pagina">1</span>
+            <button id="pagina-siguiente">Siguiente</button>
+          </div>
 
         </div>
       
         <!-- Modals -->
         <dialog id="product-modal-edit">
-          <h3>Editar productos</h3>
-          <form>
-            <label for="users-modal-edit-password">Imagen url:</label>
-            <input
-              type="text"
-              required
-              placeholder="imagen"
-              id="product-modal-edit-image_url"
-            />
-            <label for="users-modal-edit-password">Nombre del producto:</label>
-            <input type="text" placeholder="nombre" id="product-modal-edit-name" required />
-            <br></br>
-            <label for="users-modal-edit-password">Categoria:</label>
-            <input
-              type="text"
-              required
-              placeholder="category"
-              id="product-modal-edit-category"
-              />
-              <label for="users-modal-edit-password"> ㅤㅤㅤㅤㅤㅤㅤPrecio:</label>
-              <input type="text" placeholder="precio" id="product-modal-edit-price" required/>
-              <div class="buttonpro">
-                <button class="guardar"
-                class="btn-primary"
-                id="product-modal-edit-btn-save"
-                type="button"
-                >
-                guardar
-              </button>
-              <button class="cancelar"
-                class="btn-danger"
-                id="product-modal-edit-btn-cancel"
-                type="button"
-              >
-                cancelar
-              </button>
-              </div>
-            </form>
+            <div class="modal-content">
+              <h3 class="modal-title">Editar producto</h3>
+              <form class="modal-form">
+                  <div class="form-group">
+                      <label for="product-modal-edit-image_url">Imagen URL:</label>
+                      <input type="text" id="product-modal-edit-image_url" class="modal-input" />
+                      <div class="error-message" id="image-error"></div>
+                  </div>
+                  <div class="form-group">
+                      <label for="product-modal-edit-name">Nombre:</label>
+                      <input type="text" id="product-modal-edit-name" class="modal-input" />
+                      <div class="error-message" id="name-error"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="product-modal-edit-category">Categoría:</label>
+                    <select id="product-modal-edit-category" class="modal-input">
+                        <option value="female">female</option>
+                        <option value="male">male</option>
+                        <option value="kids">kids</option>
+                        <option value="all">all</option>
+                    </select>
+                    <div class="error-message" id="category-error"></div>
+                  </div>
+                  <div class="form-group">
+                      <label for="product-modal-edit-price">Precio:</label>
+                      <input type="text" id="product-modal-edit-price" class="modal-input" />
+                      <div class="error-message" id="price-error"></div>
+                  </div>
+                  <div class="modal-buttons">
+                      <button type="button" id="product-modal-edit-btn-save" class="btn btn-primary">Guardar</button>
+                      <button type="button" id="product-modal-edit-btn-cancel" class="btn btn-secondary">Cancelar</button>
+                  </div>
+              </form>
+          </div>
           <!-- cancel button -->
 
         </dialog>
+
+        <dialog id="add-product-modal">
+    <div class="modal-content">
+        <h3 class="modal-title">Agregar producto</h3>
+        <form class="modal-form">
+            <div class="form-group">
+                <label for="add-product-image_url">Imagen URL:</label>
+                <input type="text" id="add-product-image_url" class="modal-input" />
+                <div class="error-message" id="add-image-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="add-product-name">Nombre:</label>
+                <input type="text" id="add-product-name" class="modal-input" />
+                <div class="error-message" id="add-name-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="add-product-category">Categoría:</label>
+                <select id="add-product-category" class="modal-input">
+                    <option value="female">female</option>
+                    <option value="male">male</option>
+                    <option value="kids">kids</option>
+                    <option value="all">all</option>
+                </select>
+                <div class="error-message" id="add-category-error"></div>
+            </div>
+            <div class="form-group">
+                <label for="add-product-price">Precio:</label>
+                <input type="text" id="add-product-price" class="modal-input" />
+                <div class="error-message" id="add-price-error"></div>
+            </div>
+            <div class="modal-buttons">
+                <button type="button" id="add-product-btn-save" class="btn btn-primary">Guardar</button>
+                <button type="button" id="add-product-btn-cancel" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</dialog>
 
         <dialog id="users-modal-delete">
           <button id="users-delete-confirm">Eliminar</button>
@@ -113,6 +151,10 @@
         </dialog>
       </main>
    </div>
+
+   <button id="add-product-btn" class="add-product-btn">
+    + Agregar
+   </button>
    
     <script type="module" src="/helpers/index.js"></script>
     <script type="module" src="./productsManage.js"></script>

@@ -186,3 +186,19 @@ input[type="text"] {
   background-color: rgb(252, 74, 74);
   /* color: white; */
 }
+
+.modal-input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.modal-input.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}

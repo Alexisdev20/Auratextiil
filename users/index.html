@@ -61,20 +61,29 @@
           <!-- Content goes here -->
 
         </div>
+        <div id="paginacion">
+          <button id="pagina-anterior">Anterior</button>
+          <span id="numero-pagina">1</span>
+          <button id="pagina-siguiente">Siguiente</button>
+        </div>
 
         <!-- Modals -->
         <dialog id="users-modal-edit">
           <button class="users-modal-close-btn">x</button>
           <h3>Editar usuario</h3>
-
+      
           <form id="formulario">
-            <label for="users-modal-edit-username">Usuario ㅤ:</label>
-            <input type="text" placeholder="nombre de usuario" id="users-modal-edit-username" required/>
-        
-            <label for="users-modal-edit-password">Contraseña:</label>
-            <input type="text" placeholder="contraseña" id="users-modal-edit-password" required/>
-            <button id="users-modal-edit-btn-save" type="button">Guardar</button>
-        </form>
+              <label for="users-modal-edit-username">Usuario ㅤ:</label>
+              <input type="text" placeholder="nombre de usuario" id="users-modal-edit-username" class="modal-input" required/>
+              <div class="error-message" id="username-error"></div>
+      
+              <label for="users-modal-edit-password">Contraseña:</label>
+              <input type="text" placeholder="contraseña" id="users-modal-edit-password" class="modal-input" required/>
+              <div class="error-message" id="password-error"></div>
+      
+              <button id="users-modal-edit-btn-save" type="button">Guardar</button>
+          </form>
+      </dialog>
           
         </dialog>
 
